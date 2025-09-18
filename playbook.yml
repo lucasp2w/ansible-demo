@@ -1,0 +1,13 @@
+- name: Configuração Inicial
+  hosts: all
+  become: true
+  tasks:
+    - name: Atualizar Pacotes
+      apt:
+        update_cache: yes
+        upgrade: dist
+      
+    - name: Instalar Pacotes Básicos
+      apt:
+        name: tree
+        state: present
